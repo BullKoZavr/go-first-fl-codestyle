@@ -21,7 +21,6 @@ func attack(charName, charClass string) string {
 	return "неизвестный класс персонажа"
 }
 
-// обратите внимание на "if else" и на "else"
 func defence(char_name, char_class string) string {
 	if char_class == "warrior" {
 		return fmt.Sprintf("%s блокировал %d урона.", char_name, 10+randint(5, 10))
@@ -29,12 +28,10 @@ func defence(char_name, char_class string) string {
 		return fmt.Sprintf("%s блокировал %d урона.", char_name, 10+randint(-2, 2))
 	} else if char_class == "healer" {
 		return fmt.Sprintf("%s блокировал %d урона.", char_name, 10+randint(2, 5))
-	} else {
-		return "неизвестный класс персонажа"
 	}
+	return "неизвестный класс персонажа"
 }
 
-// обратите внимание на "if else" и на "else"
 func special(charName, charClass string) string {
 	if charClass == "warrior" {
 		return fmt.Sprintf("%s применил специальное умение `Выносливость %d`", charName, 80+25)
@@ -42,9 +39,9 @@ func special(charName, charClass string) string {
 		return fmt.Sprintf("%s применил специальное умение `Атака %d`", charName, 5+40)
 	} else if charClass == "healer" {
 		return fmt.Sprintf("%s применил специальное умение `Защита %d`", charName, 10+30)
-	} else {
-		return "неизвестный класс персонажа"
 	}
+	return "неизвестный класс персонажа"
+
 }
 
 // здесь обратите внимание на имена параметров
@@ -103,6 +100,7 @@ func choise_char_class() string {
 		} else if char_class == "healer" {
 			fmt.Println("Лекарь — могущественный заклинатель. Черпает силы из природы, веры и духов.")
 		}
+
 		fmt.Print("Нажми (Y), чтобы подтвердить выбор, или любую другую кнопку, чтобы выбрать другого персонажа: ")
 		fmt.Scanf("%s\n", &approve_choice)
 		approve_choice = strings.ToLower(approve_choice)
